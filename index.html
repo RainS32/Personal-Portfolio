@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.jpg" class = "logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Computer Scientist</p>
+            <h1>Hi, I'm <span>Arin Shukla</span> from<br>Crescenta Valley High School</h1>
+        </div>
+    </div>
+</div>
+
+<div id = "about">
+    <div class = "container">
+        <div class = "row">
+            <div class = "about-col-1">
+                <img src="images/arin.JPG">
+            </div>
+            <div class = "about-col-2">
+                <h1 class = "sub-title"> About Me</h1> 
+                <p>
+                    I am a Junior at Crescenta Valley High School and I love to code!
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick = "opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick = "opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick = "opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Game Development</span><br> Android/IOS Apps</li>
+                        <li><span>Web Development</span><br> HTML, CSS, Javascript</li>
+                        <li><span>Data Sciene and AI</span><br> Python, R, AI Models</li>
+                    </ul>
+                </div>
+                <div class="tab-contents avtice-tab" id="experience">
+                    <ul>
+                        <li><span>Data Science Research Program At Columbia University</span><br> Stock Prediction Model</li>
+                        <li><span>USC Cybersecurity Certificate</span><br> Cybersecurity</li>
+                        <li><span>Tutoring Maths and Computer Science</span><br>Teaching</li>
+                    </ul>
+                </div>
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>Quantum Computing</span><br>The Coding School</li>
+                        <li><span>Artificial Intelligence</span><br> The Coding School</li>
+                        <li><span>AP Computer Science</span><br>Crescenta Valley</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id = "projects">
+    </div classes = "container">
+        <h1 class = "sub-title">My Projects</h1>
+        <div class = "projects-list">
+            <div>
+                <h2> Quantum Computing</h2>
+                <p> gained knowledge in programming quantum circuits with Qiskit, delved into the intricacies of multi-qubit circuits, 
+                    learned about the many important algorithms like Grover’s algorithm, and explored cutting-edge topics such as 
+                    quantum chemistry and finance</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <h2> Basketball App</h2>
+                <p> My love for basketball led me to The Congressional App Challenge coding competition. I partnered with a friend to 
+                    create an app to locate nearby courts with active games, ensuring no Basketball player ever has to shoot hoops 
+                    alone. Building such an app for the first time, we had no clue where to start or how to code together effectively. 
+                    We did quick YouTube based research on how to build such an app resulting in us using React-Native and Google Maps 
+                    API to locate the nearby courts with active games. We encountered many errors but once we learned how to code as a 
+                    team, solving the errors and completing our app (HoopSesh) became a reality. In a short time, we learnt a lot and 
+                    accomplished something we are proud of.</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <h2> Stock prediction Model</h2>
+                <p> This research study focuses on developing a predictive model to estimate returns in investment funds. The
+                    significance of accurately predicting returns lies in aiding investors’ decision-making processes and optimizing
+                    portfolio performance. The study utilizes historical data from a dataset of investment fund performance
+                    measures. The main research question aims to understand the factors that influence returns and subsequently
+                    build a reliable predictive model. The approach involves exploratory data analysis, time series analysis, and
+                    the application of machine learning techniques. The results showcase the development of a linear regression
+                    model that predicts returns based on features such as volatility and maximum drawdown. The implications
+                    of this research contribute to providing investors with valuable insights for making informed investment
+                    decisions.</p>
+                <a href="#">learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class = "container">
+        <div class = "row">
+            <div class = "contact-left">
+                <h1 class = "sub-title"> Contact Me</h1>
+                <p>contact@example.com</p>
+                <p>0123456789</p>
+                <!--- <a href="images/my-cv.pdf" download class="btn btn2"> Download CV</a> -->
+                <a href="images/cv.pdf" download class="btn btn2"> Download CV</a>
+            </div>
+            
+            <div class = "contact-right">
+                <form>
+                    <input type = "text" name = "Name" placeholder = "Your Name" required>
+                    <input type = "email" name = "email" placeholder = "Your Email" required>
+                    <textarea name = "Message" rows = "6" placeholder = "Your Message" required></textarea>
+                    <button type = "submit" class = "btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName('tab-links');
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+
+
+</body>
+</html>
